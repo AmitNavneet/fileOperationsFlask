@@ -1,0 +1,73 @@
+<html>
+    <head>
+
+        <script>
+            function clearTextArea()
+            {
+                alert("hi");
+                document.getElementById('dataFile').value="";
+            }
+        </script>
+    </head>
+    <body>
+        {{dataTextArea}}
+        <form action="fileOperation">
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Enter File Name:</td>
+                    <td>
+        <input type="text" name="nameFile" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+Select File Operation:
+                    </td>
+                    <td>
+<input type="radio" name="fileOp" value="createFile" required>
+Create a new File
+<br> 
+<input type="radio" name="fileOp" value="writeFile">
+
+Write/overwrite in the File
+<br>  
+<input type="radio" name="fileOp" value="readFile">
+
+Read the File  
+<br> 
+<input type="radio" name="fileOp" value="deleteFile">
+Delete the File 
+<br> 
+<input type="radio" name="fileOp" value="appendFile">
+Append to the existing File
+
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+File Data:
+                    </td>
+                    <td>
+<textarea name="dataFile" rows="10" cols="20" id="dataFile">
+ {{dataTextArea}}   
+</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+<button onclick="clearTextArea()" type="button">Clear Text Area</button>
+                    </td>
+                    <td>
+    <input type="submit" value="Perform File Operation">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
